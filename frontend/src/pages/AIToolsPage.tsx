@@ -305,6 +305,75 @@ const AIToolsPage: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* AI Tools Directory Section */}
+        <div className="mt-16 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-glow-sm p-8 border border-gray-700/50">
+          <h2 className="text-2xl font-bold mb-6 text-center text-cyan-300">AI Tools Directory</h2>
+          <p className="text-center text-gray-300 mb-8">Explore our full suite of AI-powered tools to enhance your software development process</p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Requirements Tool Card */}
+            <div className="bg-gray-900/50 rounded-xl shadow-glow-sm p-6 border border-gray-700/50 hover:border-cyan-700/50 transition-all hover:shadow-glow">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-700/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-2 text-cyan-300">Requirements Analysis</h3>
+              <p className="text-gray-400 text-center mb-4">Generate structured requirements from project descriptions</p>
+              <div className="flex justify-center">
+                <button 
+                  onClick={() => setActiveTab('requirements')}
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-800/50 to-blue-800/50 hover:from-cyan-700/50 hover:to-blue-700/50 text-cyan-300 rounded-lg transition-all transform hover:scale-105 border border-cyan-900/50"
+                >
+                  Open Tool
+                </button>
+              </div>
+            </div>
+            
+            {/* Test Case Tool Card */}
+            <div className="bg-gray-900/50 rounded-xl shadow-glow-sm p-6 border border-gray-700/50 hover:border-cyan-700/50 transition-all hover:shadow-glow">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-700/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-2 text-cyan-300">Test Case Generation</h3>
+              <p className="text-gray-400 text-center mb-4">Create comprehensive test cases from requirements</p>
+              <div className="flex justify-center">
+                <button 
+                  onClick={() => setActiveTab('testing')}
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-800/50 to-blue-800/50 hover:from-cyan-700/50 hover:to-blue-700/50 text-cyan-300 rounded-lg transition-all transform hover:scale-105 border border-cyan-900/50"
+                >
+                  Open Tool
+                </button>
+              </div>
+            </div>
+            
+            {/* ER Diagram Tool Card */}
+            <div className="bg-gray-900/50 rounded-xl shadow-glow-sm p-6 border border-gray-700/50 hover:border-cyan-700/50 transition-all hover:shadow-glow">
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-700/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 8L17 8M7 12L12 12M7 16L10 16M14 12V16H18V12H14z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-2 text-cyan-300">Database Designer</h3>
+              <p className="text-gray-400 text-center mb-4">Generate ER diagrams and database schemas</p>
+              <div className="flex justify-center">
+                <a 
+                  href="/er-diagram"
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-800/50 to-blue-800/50 hover:from-cyan-700/50 hover:to-blue-700/50 text-cyan-300 rounded-lg transition-all transform hover:scale-105 border border-cyan-900/50 inline-flex items-center"
+                >
+                  Open Tool
+                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-pink-500 to-purple-500 text-white">
+                    New
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

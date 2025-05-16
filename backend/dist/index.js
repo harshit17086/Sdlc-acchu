@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const swagger_1 = require("./config/swagger");
 const upload_1 = __importDefault(require("./routes/upload")); // Import the upload router
 const ai_1 = __importDefault(require("./routes/ai")); // Import the AI router
+const ai_tools_1 = __importDefault(require("./routes/ai-tools")); // Import the AI tools router
 const app = (0, express_1.default)();
 const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173"; // Default to localhost if not set
 app.use((0, cors_1.default)({
@@ -19,6 +20,7 @@ app.use(express_1.default.json());
 app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_1.specs));
 app.use("/api/upload", upload_1.default);
 app.use("/api/ai", ai_1.default); // Mount AI routes
+app.use("/api/ai-tools", ai_tools_1.default); // Mount additional AI tools routes
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
