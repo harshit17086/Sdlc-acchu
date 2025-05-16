@@ -41,8 +41,9 @@ router.post('/requirements', async (req, res) => {
     }
 
     // Using Hugging Face Inference API (free tier)
+    // Updated to use a model that's currently available
     const response = await axios.post(
-      'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2',
+      'https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1',
       {
         inputs: `Generate a detailed list of software requirements based on the following project description. Format the output as a structured list of functional and non-functional requirements with clear categories:
         
@@ -105,8 +106,9 @@ router.post('/testcases', async (req, res) => {
     }
 
     // Using Hugging Face Inference API (free tier)
+    // Updated to use a model that's currently available
     const response = await axios.post(
-      'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2',
+      'https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1',
       {
         inputs: `Generate comprehensive test cases for the following software requirements. Format the output in ${framework} format with detailed test descriptions, expected outcomes, and edge cases:
         
