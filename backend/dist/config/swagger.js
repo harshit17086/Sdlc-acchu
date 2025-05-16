@@ -9,9 +9,9 @@ const options = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "Kaitori API",
+            title: "SDLC API",
             version: "1.0.0",
-            description: "API documentation for Kaitori",
+            description: "API documentation for SDLC",
         },
         components: {
             securitySchemes: {
@@ -27,7 +27,6 @@ const options = {
             }],
         servers: [
             {
-                //  url: "https://api.kaitorimybyte.com",
                 url: "http://localhost:3000",
                 description: "Development server",
             },

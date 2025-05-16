@@ -4,6 +4,7 @@ import cors from "cors";
 import { specs } from "./config/swagger";
 
 import uploadRouter from "./routes/upload"; // Import the upload router
+import aiRouter from "./routes/ai"; // Import the AI router
 
 const app = express();
 const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173"; // Default to localhost if not set
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use("/api/upload", uploadRouter);
+app.use("/api/ai", aiRouter); // Mount AI routes
 
 const PORT = process.env.PORT || 3000;
 
