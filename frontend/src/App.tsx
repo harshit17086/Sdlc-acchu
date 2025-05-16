@@ -8,16 +8,16 @@ import DesignPage from './pages/DesignPage';
 import DevelopmentPage from './pages/DevelopmentPage';
 import TestingPage from './pages/TestingPage';
 import DeploymentPage from './pages/DeploymentPage';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation'; 
 import Footer from './components/Footer';
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-gray-900">
         <Navigation />
-        <main className="flex-grow">
+        <main className="flex-grow bg-gray-900">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/sdlc" element={<MainPage />} />

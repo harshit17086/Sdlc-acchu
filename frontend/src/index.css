@@ -9,12 +9,19 @@ html, body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #111827; /* Match the dark theme */
 }
 
 /* Ensure proper width for content */
 #root {
   width: 100%;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #111827; /* Match the dark theme */
 }
 
 /* Custom scrollbar for the vertical scrolling */

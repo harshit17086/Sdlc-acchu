@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-12 py-10 relative overflow-hidden">
+    <footer className="bg-gray-900 text-gray-300 py-10 relative overflow-hidden">
       {/* Animated grid background */}
       <div 
         className="absolute inset-0 bg-grid-pattern opacity-5"
