@@ -56,15 +56,30 @@ const HomePage: React.FC = () => {
         </div>
         
         <div className="text-center">
-          <Link 
-            to="/sdlc" 
-            className="relative group overflow-hidden"
-          >
-            <span className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-all duration-300 transform group-hover:scale-105">
-              Explore AI in SDLC
-            </span>
-            <span className="absolute inset-0 bg-cyan-400 blur-md opacity-30 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></span>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              to="/sdlc" 
+              className="relative group overflow-hidden"
+            >
+              <span className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-all duration-300 transform group-hover:scale-105">
+                Explore AI in SDLC
+              </span>
+              <span className="absolute inset-0 bg-cyan-400 blur-md opacity-30 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></span>
+            </Link>
+            
+            <Link 
+              to="/ai-tools" 
+              className="relative group overflow-hidden"
+            >
+              <span className="relative z-10 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-all duration-300 transform group-hover:scale-105">
+                Try AI Tools
+                <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-white text-pink-600">
+                  New
+                </span>
+              </span>
+              <span className="absolute inset-0 bg-purple-400 blur-md opacity-30 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></span>
+            </Link>
+          </div>
         </div>
         
         {/* Animated elements */}

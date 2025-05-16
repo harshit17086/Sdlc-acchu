@@ -12,7 +12,8 @@ const Navigation: React.FC = () => {
     { path: '/design', label: 'Design' },
     { path: '/development', label: 'Development' },
     { path: '/testing', label: 'Testing' },
-    { path: '/deployment', label: 'Deployment' }
+    { path: '/deployment', label: 'Deployment' },
+    { path: '/ai-tools', label: 'AI Tools' }
   ];
 
   const toggleMobileMenu = () => {
@@ -58,7 +59,14 @@ const Navigation: React.FC = () => {
                   location.pathname === link.path ? 'text-indigo-300' : 'text-indigo-500'
                 }`}
               >
-                <span className="relative z-10">{link.label}</span>
+                <span className="relative z-10">
+                  {link.label}
+                  {link.label === 'AI Tools' && (
+                    <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-pink-500 to-purple-500 text-white">
+                      New
+                    </span>
+                  )}
+                </span>
                 {location.pathname === link.path && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-500 animate-pulse"></span>
                 )}
@@ -103,6 +111,11 @@ const Navigation: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}
+              {link.label === 'AI Tools' && (
+                <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-pink-500 to-purple-500 text-white">
+                  New
+                </span>
+              )}
             </Link>
           ))}
         </div>

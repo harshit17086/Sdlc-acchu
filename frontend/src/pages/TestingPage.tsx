@@ -41,10 +41,10 @@ const TestingPage: React.FC = () => {
                 Revolutionizing Software Testing with AI
               </h2>
               <p className="mb-8 text-gray-300 leading-relaxed ml-5 border-l-2 border-cyan-800/30 pl-4">
-                AI is transforming software testing by automating test case generation, 
-                predicting high-risk areas for testing focus, and enabling intelligent test execution.
-              </p>
-              
+          AI is transforming software testing by automating test case generation, 
+          predicting high-risk areas for testing focus, and enabling intelligent test execution.
+        </p>
+        
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="border border-gray-700/50 bg-gray-900/40 rounded-lg p-6 transform transition-all duration-300 hover:scale-[1.02] hover:border-cyan-800/50 hover:shadow-glow-sm group">
                   <div className="flex items-center mb-4">
@@ -54,11 +54,11 @@ const TestingPage: React.FC = () => {
                     <h3 className="text-xl font-medium text-cyan-300">Smart Test Generation</h3>
                   </div>
                   <p className="text-gray-300 ml-16">
-                    AI can analyze code and requirements to automatically generate comprehensive 
-                    test cases, reducing manual effort and increasing test coverage.
-                  </p>
-                </div>
-                
+              AI can analyze code and requirements to automatically generate comprehensive 
+              test cases, reducing manual effort and increasing test coverage.
+            </p>
+          </div>
+          
                 <div className="border border-gray-700/50 bg-gray-900/40 rounded-lg p-6 transform transition-all duration-300 hover:scale-[1.02] hover:border-cyan-800/50 hover:shadow-glow-sm group">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-lg bg-cyan-900/30 flex items-center justify-center mr-4 group-hover:bg-cyan-900/50 transition-colors">
@@ -67,23 +67,23 @@ const TestingPage: React.FC = () => {
                     <h3 className="text-xl font-medium text-cyan-300">Self-Healing Test Automation</h3>
                   </div>
                   <p className="text-gray-300 ml-16">
-                    AI-powered test frameworks can automatically adapt to UI changes, 
-                    reducing test maintenance overhead and test flakiness.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
+              AI-powered test frameworks can automatically adapt to UI changes, 
+              reducing test maintenance overhead and test flakiness.
+            </p>
+          </div>
+        </div>
+      </div>
+      
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-glow p-8 border border-gray-700/50">
               <h2 className="text-2xl font-semibold mb-6 text-white flex items-center">
                 <span className="inline-block w-2 h-8 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full mr-3"></span>
                 Deep Dive: AI for Test Case Generation
               </h2>
               <p className="mb-8 text-gray-300 leading-relaxed ml-5">
-                Modern AI systems can analyze requirements, user stories, and code to generate 
-                test cases that cover functional requirements, edge cases, and potential security vulnerabilities.
-              </p>
-              
+          Modern AI systems can analyze requirements, user stories, and code to generate 
+          test cases that cover functional requirements, edge cases, and potential security vulnerabilities.
+        </p>
+        
               <div className="bg-gray-900/40 backdrop-blur-sm rounded-lg p-6 border border-gray-700/30 group hover:border-cyan-800/50 transition-all transform hover:scale-[1.01] duration-300">
                 <h3 className="text-xl font-medium mb-6 text-cyan-300 flex items-center">
                   <i className="fas fa-trophy text-cyan-400 mr-3"></i>
@@ -108,9 +108,9 @@ const TestingPage: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-          
+        </div>
+      </div>
+      
           {/* Sidebar - 1 column */}
           <div className="lg:col-span-1">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-glow p-8 border border-gray-700/50 sticky top-20">

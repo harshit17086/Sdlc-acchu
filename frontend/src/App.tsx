@@ -8,6 +8,7 @@ import DesignPage from './pages/DesignPage';
 import DevelopmentPage from './pages/DevelopmentPage';
 import TestingPage from './pages/TestingPage';
 import DeploymentPage from './pages/DeploymentPage';
+import AIToolsPage from './pages/AIToolsPage';
 import Navigation from './components/Navigation'; 
 import Footer from './components/Footer';
 import './App.css';
@@ -27,6 +28,7 @@ const App: React.FC = () => {
             <Route path="/development" element={<DevelopmentPage />} />
             <Route path="/testing" element={<TestingPage />} />
             <Route path="/deployment" element={<DeploymentPage />} />
+            <Route path="/ai-tools" element={<AIToolsPage />} />
           </Routes>
         </main>
         <Footer />
