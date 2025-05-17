@@ -79,6 +79,26 @@ const ChatbotHelper: React.FC = () => {
         };
         
         setMessages(prev => [...prev, botResponse]);
+      } else if (response.data && response.data.response) {
+        // Handle case where response is in the response field
+        const botResponse: Message = {
+          id: messages.length + 2,
+          text: response.data.response,
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+        
+        setMessages(prev => [...prev, botResponse]);
+      } else if (response.data) {
+        // Handle case where response exists but doesn't have expected structure
+        const botResponse: Message = {
+          id: messages.length + 2,
+          text: typeof response.data === 'string' ? response.data : JSON.stringify(response.data),
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+        
+        setMessages(prev => [...prev, botResponse]);
       }
     } catch (error) {
       console.error('Error communicating with chatbot API:', error);
@@ -120,7 +140,7 @@ const ChatbotHelper: React.FC = () => {
 
       {/* Chat window */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 w-80 sm:w-96 h-96 bg-gray-900 rounded-lg shadow-2xl border border-indigo-500/20 flex flex-col overflow-hidden transition-all duration-300 animate-fade-in">
+        <div className="absolute bottom-16 right-0 w-80 sm:w-96 h-[600px] bg-gray-900 rounded-lg shadow-2xl border border-indigo-500/20 flex flex-col overflow-hidden transition-all duration-300 animate-fade-in">
           {/* Chat header */}
           <div className="bg-gray-950 text-white p-3 flex justify-between items-center border-b border-indigo-500/20">
             <div className="flex items-center">
