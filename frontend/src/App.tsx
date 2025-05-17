@@ -12,6 +12,7 @@ import AIToolsPage from './pages/AIToolsPage';
 import ERDiagramPage from './pages/ERDiagramPage';
 import Navigation from './components/Navigation'; 
 import Footer from './components/Footer';
+import ChatbotHelper from './components/ChatbotHelper';
 import './App.css';
 
 const App: React.FC = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <ChatbotHelper />
       </div>
     </Router>
   );
