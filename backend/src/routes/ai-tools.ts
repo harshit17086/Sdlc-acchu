@@ -71,15 +71,7 @@ router.post('/er-diagram', async (req, res) => {
       plantUmlCode = startumlMatch[0];
     }
 
-    // Generate URL for PlantUML diagram using public PlantUML server
-    const encodedUml = encodeURIComponent(plantUmlCode);
-    const plantUmlServerUrl = `https://www.plantuml.com/plantuml/png/~h${encodedUml}`;
-
-    res.json({ 
-      plantUmlCode,
-      diagramUrl: plantUmlServerUrl,
-      plantUmlServerUrl: 'https://www.plantuml.com/plantuml/uml/' // For manual use if needed
-    });
+    res.json({ plantUmlCode });
   } catch (error) {
     console.error('Error generating ER diagram:', error);
     res.status(500).json({ error: 'Failed to generate ER diagram' });

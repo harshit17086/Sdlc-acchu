@@ -4,7 +4,6 @@ import axios from 'axios';
 const ERDiagramPage: React.FC = () => {
   const [databaseDescription, setDatabaseDescription] = useState('');
   const [plantUmlCode, setPlantUmlCode] = useState('');
-  const [diagramUrl, setDiagramUrl] = useState('');
   const [sqlSchema, setSqlSchema] = useState('');
   const [activeTab, setActiveTab] = useState<'diagram' | 'schema'>('diagram');
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +24,6 @@ const ERDiagramPage: React.FC = () => {
         { databaseDescription }
       );
       setPlantUmlCode(response.data.plantUmlCode);
-      setDiagramUrl(response.data.diagramUrl);
     } catch (err) {
       console.error('Error generating ER diagram:', err);
       setError('Failed to generate ER diagram. Please try again.');
@@ -165,53 +163,23 @@ const ERDiagramPage: React.FC = () => {
         
         {/* Result Section - ER Diagram Tab */}
         {activeTab === 'diagram' && (
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-glow p-6 border border-gray-700/50">
-              <h2 className="text-2xl font-bold mb-4 text-cyan-300">PlantUML Code</h2>
-              <div className="h-80 overflow-auto p-4 bg-gray-900/80 text-gray-200 rounded-lg border border-gray-700 whitespace-pre-wrap font-mono text-sm">
-                {plantUmlCode || 'Your PlantUML code will appear here...'}
-              </div>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(plantUmlCode);
-                }}
-                disabled={!plantUmlCode}
-                className="mt-4 w-full flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                </svg>
-                Copy Code
-              </button>
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-glow p-6 border border-gray-700/50">
+            <h2 className="text-2xl font-bold mb-4 text-cyan-300">PlantUML Code</h2>
+            <div className="h-96 overflow-auto p-4 bg-gray-900/80 text-gray-200 rounded-lg border border-gray-700 whitespace-pre-wrap font-mono text-sm">
+              {plantUmlCode || 'Your PlantUML code will appear here...'}
             </div>
-            
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-glow p-6 border border-gray-700/50">
-              <h2 className="text-2xl font-bold mb-4 text-cyan-300">ER Diagram</h2>
-              <div className="h-80 overflow-auto p-4 bg-gray-900/80 text-gray-200 rounded-lg border border-gray-700 flex items-center justify-center">
-                {diagramUrl ? (
-                  <img 
-                    src={diagramUrl} 
-                    alt="Generated ER Diagram" 
-                    className="max-w-full max-h-full object-contain" 
-                  />
-                ) : (
-                  <div className="text-gray-500 italic">Your diagram will appear here...</div>
-                )}
-              </div>
-              <div className="mt-4 flex space-x-4">
-                <a
-                  href={diagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex-1 flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors ${!diagramUrl ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  Open Full Size
-                </a>
-              </div>
-            </div>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(plantUmlCode);
+              }}
+              disabled={!plantUmlCode}
+              className="mt-4 w-full flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+              </svg>
+              Copy Code
+            </button>
           </div>
         )}
         
@@ -255,15 +223,15 @@ const ERDiagramPage: React.FC = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
-                  <span>Diagram is rendered using the public PlantUML server</span>
+                  <span>Primary keys, foreign keys, and relationships are properly defined</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
-                  <span>Primary keys, foreign keys, and relationships are visually represented</span>
+                  <span>You can copy the PlantUML code to use in your preferred editor</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-2">•</span>
-                  <span>You can edit the PlantUML code to customize your diagram further</span>
+                  <span>Customize the generated code to match your specific needs</span>
                 </li>
               </ul>
             </div>

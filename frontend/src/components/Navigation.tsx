@@ -13,7 +13,8 @@ const Navigation: React.FC = () => {
     { path: '/development', label: 'Development' },
     { path: '/testing', label: 'Testing' },
     { path: '/deployment', label: 'Deployment' },
-    { path: '/ai-tools', label: 'AI Tools' }
+    { path: '/ai-tools', label: 'AI Tools' },
+    { path: '/er-diagram', label: 'ER Diagram' }
   ];
 
   const toggleMobileMenu = () => {
